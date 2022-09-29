@@ -1,2 +1,2 @@
-# minimal-dashboard
-Minimal Dashboard
+# ashen-dashboard
+Ashen Dashboard
