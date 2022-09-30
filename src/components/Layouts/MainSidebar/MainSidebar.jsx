@@ -1,11 +1,24 @@
-import React from 'react';
+import React from "react";
+import MainButton from "./MainButton/MainButton";
+import NotificationButton from "./NotificationButton/NotificationButton";
+
+import reactLogo from '../../../assets/react.svg'
 
 const MainSidebar = () => {
-  return(
-    <aside className="h-screen sticky top-0 bg-blue-900 w-3 h-max">
-        test sdasdadsa
-    </aside>
+  return (
+    <div className="flex-none h-screen w-14 menu bg-[#f5f5f4] ">
+      <div className="w-14 py-10 px-2  bg-lilac-900 z-10 menu-scroll overflow-y-auto overflow-x-hidden">
+        <div className="center mb-20 cursor-pointer menu-button">
+          <a href="https://reactjs.org" target="_blank">
+            <img src={reactLogo} className="logo react" alt="React logo" />
+          </a>
+        </div>
+
+        <MainButton name="profile" alt="profile" icon="bi-person-circle" />
+        <NotificationButton />
+      </div>
+    </div>
   );
-}
+};
 
 export default MainSidebar;

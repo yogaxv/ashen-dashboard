@@ -1,6 +1,6 @@
 import { Route, Routes , BrowserRouter} from "react-router-dom";
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
-import MasterLayout from "../Layouts/MasterLayout/MasterLayout";
+import MasterLayout from "../Layouts/MasterLayout";
 
 export default function App() {
   return (
