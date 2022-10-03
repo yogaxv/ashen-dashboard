@@ -11,13 +11,13 @@ const SecondSidebar = () => {
           <a
             id="menu-"
             className="flex items-center text-gray-400"
-            href="http://akaunting.test/1"
+            href="#"
           >
             <div className="w-8 h-8 flex items-center justify-center">
               <i class="bi bi-speedometer2"></i>
             </div>
 
-            <span className="text ltr:ml-2 rtl:mr-2 font-semibold">
+            <span className="text ltr:ml-2 rtl:mr-2 font-thin hover:font-semibold">
               Dashboard
             </span>
           </a>
@@ -27,13 +27,13 @@ const SecondSidebar = () => {
           <a
             id="menu-"
             className="flex items-center text-gray-400"
-            href="http://akaunting.test/1"
+            href="#"
           >
             <div className="w-8 h-8 flex items-center justify-center">
               <i class="bi bi-box-seam"></i>
             </div>
 
-            <span className="text ltr:ml-2 rtl:mr-2 font-semibold">
+            <span className="text ltr:ml-2 rtl:mr-2 font-thin hover:font-semibold">
               Items
             </span>
           </a>
@@ -43,20 +43,18 @@ const SecondSidebar = () => {
           <a
             id="menu-"
             className="flex items-center text-gray-400"
-            href="http://akaunting.test/1"
+            href="#"
           >
             <div className="w-8 h-8 flex items-center justify-center">
               <i class="bi bi-file-post"></i>
             </div>
 
-            <span className="text ltr:ml-2 rtl:mr-2 font-semibold">
+            <span className="text ltr:ml-2 rtl:mr-2 font-thin hover:font-semibold">
               Reports
             </span>
           </a>
         </li>
       </ul>
-
-     
     </div>
   );
 };
