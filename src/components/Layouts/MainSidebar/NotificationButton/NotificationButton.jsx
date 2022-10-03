@@ -14,7 +14,7 @@ const NotificationButton = () => {
           <span
             id="menu-notification-icon"
             name="notifications"
-            className="bi bi-bell text-purple "
+            className="bi bi-bell text-gray-400"
           ></span>
         </button>
 

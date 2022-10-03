@@ -4,7 +4,7 @@ import SecondSidebar from "./SecondSidebar/SecondSidebar";
 const MasterLayout = () => {
   return (
     <div className="w-full min-h-screen flex ">
-      <aside className="flex flex-none flex-row h-screen w-70 sm:border-r border-gray-light ">
+      <aside className="flex flex-none flex-row h-screen w-80 sm:border-r border-gray-light ">
         <MainSidebar />
         <SecondSidebar />
 
