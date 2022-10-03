@@ -1,10 +1,11 @@
+import HeaderPage from "../HeaderPage/HeaderPage";
 import MainSidebar from "./MainSidebar/MainSidebar";
 import SecondSidebar from "./SecondSidebar/SecondSidebar";
 
 const MasterLayout = () => {
   return (
     <div className="w-full min-h-screen flex ">
-      <aside className="flex flex-none flex-row h-screen w-80 sm:border-r border-gray-light ">
+      <aside className="flex flex-row h-screen w-80 sm:border-r border-gray-light ">
         <MainSidebar />
         <SecondSidebar />
 
@@ -15,7 +16,10 @@ const MasterLayout = () => {
         </button>
       </aside>
 
-      <main className="flex flex-1 content-start container px-10 py-14">
+      <main className="container px-10 py-14">
+
+        <HeaderPage name="Dashboard" description="This is sample dashboard" className="mb-5" />
+
         <h1>Basic Example</h1>
 
         <p>
