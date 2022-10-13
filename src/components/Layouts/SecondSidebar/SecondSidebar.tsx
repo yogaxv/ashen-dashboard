@@ -9,12 +9,12 @@ const SecondSidebar = () => {
       <ul className="w-full group mt-14">
         <li className="group relative pb-2.5">
           <a
-            id="menu-"
+            id="menu-dashboard"
             className="flex items-center text-gray-400"
             href="#"
           >
             <div className="w-8 h-8 flex items-center justify-center">
-              <i class="bi bi-speedometer2"></i>
+              <i className="bi bi-speedometer2"></i>
             </div>
 
             <span className="text ltr:ml-2 rtl:mr-2 font-thin hover:font-semibold">
@@ -25,12 +25,12 @@ const SecondSidebar = () => {
 
         <li className="group relative pb-2.5">
           <a
-            id="menu-"
+            id="menu-items"
             className="flex items-center text-gray-400"
             href="#"
           >
             <div className="w-8 h-8 flex items-center justify-center">
-              <i class="bi bi-box-seam"></i>
+              <i className="bi bi-box-seam"></i>
             </div>
 
             <span className="text ltr:ml-2 rtl:mr-2 font-thin hover:font-semibold">
@@ -41,12 +41,12 @@ const SecondSidebar = () => {
 
         <li className="group relative pb-2.5">
           <a
-            id="menu-"
+            id="menu-reports"
             className="flex items-center text-gray-400"
             href="#"
           >
             <div className="w-8 h-8 flex items-center justify-center">
-              <i class="bi bi-file-post"></i>
+              <i className="bi bi-file-post"></i>
             </div>
 
             <span className="text ltr:ml-2 rtl:mr-2 font-thin hover:font-semibold">

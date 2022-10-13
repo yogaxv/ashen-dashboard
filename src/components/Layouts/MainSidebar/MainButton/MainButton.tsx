@@ -1,4 +1,9 @@
-const MainButton = ({name, alt, icon}) => {
+interface Props {
+  name: string
+  icon: string
+}
+
+const MainButton = ({name, icon} : Props) => {
   return (
     <div
       data-tooltip-target={`tooltip-${name}`}
@@ -8,9 +13,7 @@ const MainButton = ({name, alt, icon}) => {
     >
       <span
         id="menu-profile-icon"
-        name="account_circle"
         className={`bi ${icon} text-gray-400 w-8 h-8 flex items-center justify-center text-center`}
-        alt={alt}
         title={name}
       ></span>
     </div>

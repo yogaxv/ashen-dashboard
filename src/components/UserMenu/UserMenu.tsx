@@ -2,19 +2,23 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Transition from "../Transition/Transition";
 
+interface KeyHandlerProps {
+  keyCode: number
+}
+
 const UserMenu = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  const trigger = useRef(null);
-  const dropdown = useRef(null);
+  const trigger = useRef<HTMLButtonElement | null>(null);
+  const dropdown = useRef<HTMLInputElement | null>(null);
 
   // close on click outside
   useEffect(() => {
-    const clickHandler = ({ target }) => {
+    const clickHandler = (event: MouseEvent) => {
       if (
         !dropdownOpen ||
-        dropdown.current.contains(target) ||
-        trigger.current.contains(target)
+        dropdown.current?.contains(event.target as Node) ||
+        trigger.current?.contains(event.target as Node)
       )
         return;
       setDropdownOpen(false);
@@ -25,7 +29,7 @@ const UserMenu = () => {
 
   // close if the esc key is pressed
   useEffect(() => {
-    const keyHandler = ({ keyCode }) => {
+    const keyHandler = ({ keyCode }: KeyHandlerProps) => {
       if (!dropdownOpen || keyCode !== 27) return;
       setDropdownOpen(false);
     };
@@ -40,7 +44,7 @@ const UserMenu = () => {
         className="flex w-full group items-center"
         aria-haspopup="true"
         onClick={() => setDropdownOpen(!dropdownOpen)}
-        aria-expanded={dropdownOpen}
+        // aria-expanded={dropdownOpen}
       >
         <img
           className="rounded-full"

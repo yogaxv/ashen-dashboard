@@ -10,10 +10,11 @@ const NotificationButton = () => {
           type="button"
           className="flex items-center menu-button justify-center w-8 h-8 mb-2.5 relative cursor-pointer js-menu-toggles"
           data-menu="notifications-menu"
+          name="notification-button"
+          title="notifications"
         >
           <span
             id="menu-notification-icon"
-            name="notifications"
             className="bi bi-bell text-gray-400"
           ></span>
         </button>

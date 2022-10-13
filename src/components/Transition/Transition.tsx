@@ -1,8 +1,28 @@
 import React, { useRef, useEffect, useContext } from 'react';
 import { CSSTransition as ReactCSSTransition } from 'react-transition-group';
 
+
+interface CSSTransitionProps {
+  show?: any
+  enter?: string
+  enterStart?: string
+  enterEnd?: string
+  leave?: string
+  leaveStart?: string
+  leaveEnd?: string
+  appear?: any
+  unmountOnExit?: any
+  tag?: string
+  children?: any
+  [x:string]: any;
+}
+
 const TransitionContext = React.createContext({
-  parent: {},
+  parent: {
+    appear: false,
+    isInitialRender: false,
+    show:false
+  },
 })
 
 function useIsInitialRender() {
@@ -26,7 +46,7 @@ function CSSTransition({
   tag = 'div',
   children,
   ...rest
-}) {
+}: CSSTransitionProps ) {
   const enterClasses = enter.split(' ').filter((s) => s.length);
   const enterStartClasses = enterStart.split(' ').filter((s) => s.length);
   const enterEndClasses = enterEnd.split(' ').filter((s) => s.length);
@@ -35,16 +55,16 @@ function CSSTransition({
   const leaveEndClasses = leaveEnd.split(' ').filter((s) => s.length);
   const removeFromDom = unmountOnExit;
 
-  function addClasses(node, classes) {
+  function addClasses(node: HTMLElement, classes: Array<string>) {
     classes.length && node.classList.add(...classes);
   }
 
-  function removeClasses(node, classes) {
+  function removeClasses(node: HTMLElement, classes: Array<string>) {
     classes.length && node.classList.remove(...classes);
   }
 
-  const nodeRef = React.useRef(null);
-  const Component = tag;
+  const nodeRef = React.useRef<any>(null);
+  const Component = tag as any;
 
   return (
     <ReactCSSTransition
@@ -52,14 +72,16 @@ function CSSTransition({
       nodeRef={nodeRef}
       unmountOnExit={removeFromDom}
       in={show}
-      addEndListener={(done) => {
-        nodeRef.current.addEventListener('transitionend', done, false)
+      addEndListener={(done:any) => {
+        nodeRef.current?.addEventListener('transitionend', done, false)
       }}
       onEnter={() => {
         if (!removeFromDom) nodeRef.current.style.display = null;
         addClasses(nodeRef.current, [...enterClasses, ...enterStartClasses])
       }}
       onEntering={() => {
+        if(nodeRef == null) return;
+
         removeClasses(nodeRef.current, enterStartClasses)
         addClasses(nodeRef.current, enterEndClasses)
       }}
@@ -83,7 +105,7 @@ function CSSTransition({
   )
 }
 
-function Transition({ show, appear, ...rest }) {
+function Transition({ show, appear, ...rest }: CSSTransitionProps) {
   const { parent } = useContext(TransitionContext);
   const isInitialRender = useIsInitialRender();
   const isChild = show === undefined;

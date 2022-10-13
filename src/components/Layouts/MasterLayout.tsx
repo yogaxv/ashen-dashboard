@@ -11,7 +11,8 @@ const MasterLayout = () => {
 
         <button
           type="button"
-          class="toggle-button absolute ltr:-right-2 rtl:-left-2 top-8 cursor-pointer transition-opacity ease-in-out z-50"
+          className="toggle-button absolute ltr:-right-2 rtl:-left-2 top-8 cursor-pointer transition-opacity ease-in-out z-50"
+          title="test"
         ></button>
       </aside>
 
