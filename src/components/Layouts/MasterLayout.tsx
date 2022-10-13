@@ -1,13 +1,39 @@
 import HeaderPage from "./HeaderPage/HeaderPage";
 import MainSidebar from "./MainSidebar/MainSidebar";
 import SecondSidebar from "./SecondSidebar/SecondSidebar";
+import useSidebarStore from "./../../store/siderbar";
+import { useState } from "react";
 
 const MasterLayout = () => {
+  const [open, setOpen] = useState(true);
+  const [display, setDisplay] = useState(true);
+
+  const handleToggleClick = () => {
+    if(open){
+      setDisplay(!display)
+      setTimeout(() => setOpen(!open), 100)
+    } else {
+      setOpen(!open)
+      setTimeout(() => setDisplay(!display), 400)
+    }
+  }
+
   return (
     <div className="w-full min-h-screen flex ">
-      <aside className="flex flex-row h-screen w-80 sm:border-r border-gray-light ">
+      <aside
+        className={`flex flex-row h-screen w-80 sm:border-r border-gray-light relative duration-300 ${
+          open ? "w-80" : "w-14 delay-300"
+        }`}
+      >
+        <div
+          className="w-5 h-5 flex items-center rounded-full justify-center bg-sky-300 cursor-pointer absolute top-14 -right-3 z-20"
+          onClick={handleToggleClick}
+        >
+          <i className={`bi bi-chevron-left scale-50 stroke-width-2 text-slate-600 ${!open && "rotate-180"}`}></i>
+        </div>
+
         <MainSidebar />
-        <SecondSidebar />
+        <SecondSidebar className={`transition-all duration-200 ${display ? "opacity-100" : "opacity-0"}`} />
 
         <button
           type="button"
@@ -17,7 +43,7 @@ const MasterLayout = () => {
       </aside>
 
       <main className="flex flex-row">
-        <section className="container pt-10 p-5">
+        <section className="container pt-12 px-16">
           <HeaderPage
             name="Dashboard"
             description="This is sample dashboard"

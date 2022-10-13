@@ -1,9 +1,13 @@
 import React from "react";
 import UserMenu from "../UserMenu/UserMenu";
 
-const SecondSidebar = () => {
+interface Props {
+  className: string
+}
+
+const SecondSidebar = ({className}: Props) => {
   return (
-    <div className="flex flex-col flex-1 h-screen w-56 px-5 content-start py-10">
+    <div className={`flex flex-col flex-1 h-screen w-56 px-8 content-start py-12 ${className}`}>
       <UserMenu />
 
       <ul className="w-full group mt-14">

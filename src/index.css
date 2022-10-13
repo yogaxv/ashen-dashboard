@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .stroke-width-2 {
+    -webkit-text-stroke-width: 2px;
+  }
+
+  .stroke-width-3 {
+    -webkit-text-stroke-width: 3px;
+  }
+  /* ... */
+}
