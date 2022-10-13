@@ -1,4 +1,4 @@
-import HeaderPage from "../HeaderPage/HeaderPage";
+import HeaderPage from "./HeaderPage/HeaderPage";
 import MainSidebar from "./MainSidebar/MainSidebar";
 import SecondSidebar from "./SecondSidebar/SecondSidebar";
 

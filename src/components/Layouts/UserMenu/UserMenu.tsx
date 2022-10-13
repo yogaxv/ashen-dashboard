@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Transition from "../Transition/Transition";
+import Transition from "../../Utils/Transition/Transition";
 
 interface KeyHandlerProps {
   keyCode: number
