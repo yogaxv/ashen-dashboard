@@ -1,7 +1,6 @@
 import HeaderPage from "./HeaderPage/HeaderPage";
 import MainSidebar from "./MainSidebar/MainSidebar";
 import SecondSidebar from "./SecondSidebar/SecondSidebar";
-import useSidebarStore from "./../../store/siderbar";
 import { useState } from "react";
 
 const MasterLayout = () => {
